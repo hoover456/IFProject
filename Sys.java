@@ -1,9 +1,8 @@
 
-import java.util.ArrayList;
 import java.util.Scanner;
 public class Sys {
 	private static String str2 = "";
- 	private static Scanner scan = new Scanner(System.in);
+	private static Scanner scan = new Scanner(System.in);
 	public Sys() {
 
 	}
@@ -17,19 +16,9 @@ public class Sys {
 		} catch (InterruptedException ie) {
 		}
 	}
-	public static ArrayList<String> split(String str)
-	{
-		ArrayList<String> strings = new ArrayList<String>();
-			for(int c = 0; c < str.length(); c++)
-			{
-				if(str.charAt(c) == ' ')
-				{
-					strings.add(str.substring(c));
-					str = str.substring(c);
-				}
-		}
-		return strings;
-	}
+	
+	//Slow Prints a string
+	// 20 chars a second
 	public static void sp(String input) {
 		for (int c = 0; c < input.length(); c++) {
 			if(input.charAt(c) != '\\')
@@ -63,6 +52,9 @@ public class Sys {
 		}
 		System.out.println();
 	}
+	
+	//Prints a message REALY SLOWLY
+	//7ish chars a second
 	public static void supersp(String input) {
 		for (int c = 0; c < input.length(); c++) {
 			if(input.charAt(c) != '\\')
@@ -96,55 +88,104 @@ public class Sys {
 		}
 		System.out.println();
 	}
+	
+	//Prints > and prompts a response
+	//@return the response
 	public static String scan()
 	{
 		pn(">");
 		String choice = scan.nextLine();
-		return gen(choice);
+		return choice;
 	}
-
+	//Prints a message before it attempst to scan
+	//@return the response to the message
 	public static String scan(String message)
 	{
 		p(message);
 		pn(">");
 		String choice = scan.nextLine();
-		return gen(choice);
+		return choice;
 	}
+	//Same thing as ^^^ however it slow prints the message
 	public static String scanSp(String message)
 	{
 		sp(message);
 		pn(">");
 		String choice = scan.nextLine();
-		return gen(choice);
+		return choice;
 	}
-	public static String gen(String genMe)
+	
+	//Sanitizes the inputs. It changes anything it can to as standard
+	//string for ease of programing.
+	public static String[] generalize(String[] words)
 	{
-		genMe = genMe.toLowerCase().trim();
-		switch(genMe)
+		for(String s: words)
 		{
-		case "y": case "ok": case "yes": case "sure": case "true":
-			return "y";
-		case "n": case "no": case "never": case "false":
-			return "n";
-		case "take": case "t": 
-			return "take";
-		case "talk": case "speak": case "chat":
-			return "talk";
-			default: return genMe;
+			switch(s)
+			{
+			case "north":
+				s = "n";
+				break;
+			case "south":
+				s = "s";
+				break;
+			case "east":
+				s = "e";
+				break;
+			case "west":
+				s = "w";
+				break;
+			case "look": case "examine":
+				s = "l";
+				break;
+			case "chat": case "speak": 
+				s = "talk";
+				break;
+			case "steal":
+				s = "take";
+				break;
+			case "ok": case "sure": case "true":
+				s = "yes";
+				break;
+			case "never": case "false": 
+				s = "no";
+				break;
+			}
 		}
+		String[] acceptedWords = {""
+		for(int c = 0; c < words.length; c++)
+		{
+			
+			boolean isOk = false;
+			for(String w: acceptedWords)
+			{
+				if(words[c].equals(w))
+					isOk = true;
+			}
+			//CHECK IF IT IS AN ITEM
+			//REMOVE WORDS[c] IF IT IS FALSE
+		}
+		return words;
 	}
+		
+	//Shortcut for System.out.println(Message)
 	public static void p(String str)
 	{
 		System.out.println(str);
 	}
+	//Shortcut for System.out.println()
+	//USed for skipping lines
 	public static void p()
 	{
 		System.out.println();
 	}
+	//Shortcut for System.out.print(Message);
+	//Stands for print no skip
 	public static void pn(String str)
 	{
 		System.out.print(str);
 	}
+	//Displays a nice enter message and scans for a new line
 	public static void pause()
 	{
 		pn("[ENTER]");
