@@ -13,12 +13,12 @@ public class Player
 	
 	//Adds an item to the inventory
 	//When i get around to it it will add stackable items as well
-	public addItem(Item i)
+	public void addItem(Item i)
 	{
 		inv.add(i);
 	}
 	//Same thing but removes them instead
-	public removeItem(Item i)
+	public void removeItem(Item i)
 	{
 		inv.remove(i);
 	}

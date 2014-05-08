@@ -8,7 +8,7 @@ public class World {
 	
 	//This runs at the begining of the game
 	//It sets up all of the maps that we will use in an array list
-	public void init()
+	public static void init()
 	{
 		Sys.p("Loading Maps");
 		AcoricoSquare as = new AcoricoSquare();
@@ -33,12 +33,13 @@ public class World {
 					currentMap = m;
 				}
 			}
+			currentMap.uponAriving();
 		}
 	}
 	
 	//Parses through location based commands
 	//ie looking and moving
-	public void parse(String[] actions)
+	public static void parse(String[] actions)
 	{
 		for(String s: actions)
 		{
@@ -53,23 +54,28 @@ public class World {
 					currentMap.takeItem();
 					break;
 				case "n":
-					go(currentMap.north);
+					currentMap.goNorth();
 					break;
 				case "s":
-					go(currentMap.south);
+					currentMap.goSouth();
 					break;
 				case "e":
-					go(currentMap.east);
+					currentMap.goEast();
 					break;
-				case "w":
-					go(currentMap.west);
-					break;
+				case "w": 
+					currentMap.goWest();
 				default:
-					currentMap.pars(actions);
+					currentMap.parse(actions);
 				}
 			}
 		}
 
+	}
+	
+	//Easier access for the look method
+	public static void look()
+	{
+		currentMap.look();
 	}
 	
 }

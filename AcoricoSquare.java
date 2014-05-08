@@ -1,6 +1,6 @@
 
 public class AcoricoSquare extends Map {
-	
+	//THIS IS ONLY AN EXAMPLE
 	//#MoreCommentsComments
 	
 	static String name = "Acorico Square";
@@ -49,7 +49,7 @@ public class AcoricoSquare extends Map {
 	{
 		switch(commands[0])
 		{
-		case "toggle": case "flip": case "hit"
+		case "toggle": case "flip": case "hit":
 			lever = !lever;
 		}
 	}

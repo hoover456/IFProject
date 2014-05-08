@@ -2,12 +2,12 @@ import java.io.IOException;
 
 
 public class Write {
-	private static String filePath;
-	public static void setFilePath(String newFilePath)
+	private String filePath;
+	public void setFilePath(String newFilePath)
 	{
 		filePath = newFilePath;
 	}
-	public static void write(String str)
+	public void write(String str)
 	{
 		Writer writer = new Writer(filePath);
 		try 
@@ -19,7 +19,7 @@ public class Write {
 			System.out.println("Writer has failed");
 		}
 	}
-	public static void write(String str, boolean append)
+	public void write(String str, boolean append)
 	{
 		Writer writer = new Writer(filePath);
 		try 
@@ -31,7 +31,7 @@ public class Write {
 			System.out.println("Writer has failed");
 		}
 	}
-	public static void write(String str, String newFilePath)
+	public void write(String str, String newFilePath)
 	{
 		setFilePath(newFilePath);
 		Writer writer = new Writer(filePath);
@@ -44,7 +44,7 @@ public class Write {
 			System.out.println("Writer has failed");
 		}
 	}
-	public static void write(String str, String newFilePath, boolean append)
+	public void write(String str, String newFilePath, boolean append)
 	{
 		setFilePath(newFilePath);
 		Writer writer = new Writer(filePath, append);

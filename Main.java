@@ -25,18 +25,19 @@ public class Main {
 		Globals.newPlayer(name, isBoy);
 		
 		//Runs the engine
-		//It starts by scanning for a line. That line is broken up into words.
+		//First it displays the current location's look method
+		//Then it scans for user input. That line is broken up into words.
 		//The parser will parse the array of words
 		//The system pauses before the next line can be entered. 
 		boolean meGivingADamn = false;
 		while(!meGivingADamn)
 		{
+			World.look();
 			String command = Sys.scan();
 			String[] strings = command.toLowerCase().trim().split(" ");
-			//Parser.pars(strings)
+			Parser.go(strings);
 			Sys.pause();
 			//Sys.newScreen(); FIND A WAY TO CLEAR LINES
 		}
-		scan.close();
 	}
 }

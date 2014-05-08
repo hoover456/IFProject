@@ -33,11 +33,11 @@ public abstract class Map {
 	
 	//Adds the item to the players inventory
 	//Then sets it to null
-	public Item takeItem()
+	public void takeItem()
 	{
 		if(myItem != null)
 		{
-			Globals.take(myItem);
+			Globals.takeItem(myItem);
 			myItem = null;
 		}
 		else
@@ -52,9 +52,31 @@ public abstract class Map {
 	//@Param An array of commands that has already passed through
 	//the parser and the World parser
 	//see READMEDAMMIT.txt
-	public void pars(String[] commands)
+	public void parse(String[] commands)
 	{
 		Sys.p("I don't understand.");
 	}
 	
+	//This is your directionality
+	//Pretty self explanatory
+	public void goNorth() {
+		World.go(north);
+	}
+	public void goSouth() {
+		World.go(south);
+	}
+	public void goEast() {
+		World.go(east);
+	}
+	public void goWest() {
+		World.go(west);
+	}
+	
+	//This is run the first time you enter a place, not just any 
+	//time you do something
+	//Change as necessary(Set to do nothing)
+	public void uponAriving()
+	{
+		
+	}
 }

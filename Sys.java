@@ -152,22 +152,21 @@ public class Sys {
 				break;
 			}
 		}
-		String[] acceptedWords = {""
-		for(int c = 0; c < words.length; c++)
-		{
-			
-			boolean isOk = false;
-			for(String w: acceptedWords)
-			{
-				if(words[c].equals(w))
-					isOk = true;
-			}
-			//CHECK IF IT IS AN ITEM
-			//REMOVE WORDS[c] IF IT IS FALSE
-		}
 		return words;
 	}
-		
+	
+	//Returns true if the array contains the string
+	//or a string contains the pattern
+	public static boolean contains(String[] words, String pattern)
+	{
+		boolean hasIt = false;
+		for(String s: words)
+		{
+			if(s.equals(pattern) || s.contains(pattern))
+				hasIt = true;
+		}
+		return hasIt;
+	}
 	//Shortcut for System.out.println(Message)
 	public static void p(String str)
 	{
