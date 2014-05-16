@@ -2,7 +2,7 @@
 public abstract class Map {
 	
 	//Map info, used for moving
-	static String name;
+	String name;
 	static String north, south, east, west;
 	static String flt, oflt; //Flavor text and Other Flavor text
 	static Item myItem;

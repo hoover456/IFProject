@@ -1,7 +1,7 @@
 
 import java.util.Scanner;
 public class Sys {
-	private static String str2 = "";
+	//private static String str2 = "";
 	private static Scanner scan = new Scanner(System.in);
 	public Sys() {
 

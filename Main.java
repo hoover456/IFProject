@@ -1,13 +1,10 @@
-import java.util.Scanner;
-
-
 public class Main {
 	public static void main(String[] args)
 	{
 		//whether it is a boy or not
 		boolean isBoy;
 		
-		//Class initiliazations
+		//Class initializations
 		World.init(); 
 		
 		//Find out player info

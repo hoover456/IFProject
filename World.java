@@ -4,19 +4,20 @@ import java.util.ArrayList;
 public class World {
 	static ArrayList<Map> maps = new ArrayList<Map>();//An array of all maps
 	
-	static Map currentMap = maps.get(0);//Your current location
+	static Map currentMap;//Your current location
 	
-	//This runs at the begining of the game
+	//This runs at the beginning of the game
 	//It sets up all of the maps that we will use in an array list
 	public static void init()
 	{
 		Sys.p("Loading Maps");
 		AcoricoSquare as = new AcoricoSquare();
 		maps.add(as);
+		currentMap = maps.get(0);
 		Sys.p("Maps loaded");
 	}
-	//Attempst to go to a location specified
-	//If you cant go there, it will tell you
+	//Attempt to go to a location specified
+	//If you can't go there, it will tell you
 	//If you want we could use it to TP
 	public static void go(String goTo)
 	{

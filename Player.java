@@ -3,7 +3,7 @@ public class Player
 {
 	String name;
 	boolean isMale;
-	ArrayList<Item> inv = new ArrayList();
+	ArrayList<Item> inv = new ArrayList<Item>();
 	
 	public Player(String myName, boolean gender)
 	{
