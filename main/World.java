@@ -1,4 +1,7 @@
+package main;
 import java.util.ArrayList;
+
+import locations.AcoricoSquare;
 
 
 public class World {

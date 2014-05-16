@@ -1,3 +1,8 @@
+package locations;
+import main.Item;
+import main.Map;
+import main.Sys;
+
 
 public class AcoricoSquare extends Map {
 	//THIS IS ONLY AN EXAMPLE
